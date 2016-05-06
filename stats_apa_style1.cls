@@ -2,6 +2,7 @@
 \ProvidesClass{stats_apa}[2016/05/05 Class providing APA format for stats classes]
 \LoadClass[12pt]{article}
 
+\RequirePackage{lipsum}
 \RequirePackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{pslatex}
