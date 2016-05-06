@@ -1,0 +1,131 @@
+\documentclass{stats_apa}
+
+% Copy-paste bibtex format from Google scholar, eazy peazy!
+\begin{filecontents*}{MyReferences.bib}
+	@article{mcboat2016cool,
+		title={Cool title for a paper},
+		author={McBoatface, Boaty},
+		journal={Journal of Awesome Boatery},
+		pages={230},
+		year={2016},
+		publisher={Oxford University Press}
+	}
+\end{filecontents*}
+
+\title{Study On Why Fake Statistics Make Good Templates}
+\author{Dylan Goldsborough}
+\date{\today}
+\course{Methods \& Statistics 210}
+\instructor{Instructor: Dr. Marcin Sklad}
+\university{University College Roosevelt}
+\additional{Dylan: Everything\break Not-Dylan: Nothing}
+\wordcount{Wordcount: 1,000}
+\shorttitle{Study Fake Statistics}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+The purpose of this study was to build a model to predict whether an individual identifies himself with any political party. The following socioeconomic factors were used to predict party identification: age, years of education, job satisfaction, degree of religiousness and what principal values one has. In addition, the voting behavior in the past elections was used, where two predictors were created by dividing the parties in groups based on religious ideas and place in the political spectrum. Finally, interaction effects between the variables were incorporated. The analysis was performed on data collected in the European Social Survey in 2012 in the Netherlands. A binomial logistic regression was performed, using 4 blocks. It was found that older people, and people who are more satisfied with their jobs are more likely to identify with a party, as well as people who are more religious as well as voted for a Christian party. However, people who voted for a religious party were overall less likely to identify with a party. There was no significant effect found of education, the place in the political spectrum of the party last voted for, or what principal values one has on party identification.
+\end{abstract}
+
+\newpage
+
+\section*{Literature Review}
+
+Since the dawn of the first indirect democratic systems, the question how voters identify with a party or politician has been of importance due to the benefit of this relationship for the representative. We can approach the explanation of party identification from different angles: from the perspective of the individual, and from the perspective of the political environment. The individual, however, is of the most interest to those who wish to understand and influence the political behavior of the people: conditions for the individual are much more easily changed than the political climate as a whole.
+In general, party identification is defined as “a long-term, affective, psychological identification with one’s preferred political party” \cite[p.20]{mcboat2016cool}. This concept is also captured to great extent by the partisanship, the membership of political parties, and the party affiliation, a connection to a party similar to identification. According to \citeA{mcboat2016cool}, this is cool.
+
+\section*{Methods}
+
+\subsection*{Dataset} 
+
+MAKE BOLD
+
+\subsection*{Variable Selection}
+
+\section*{Results}
+
+\section*{Discussion}
+
+\newpage
+
+\bibliography{MyReferences}
+\bibliographystyle{apacite}
+
+\newpage
+\appendix
+
+\section*{Appendix A}
+\label{app: A}
+
+\begin{table}[H]
+\caption{A table}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+A & B & C & D \\ 
+\hline 
+1 & 2 & 3 & 4 \\ 
+\hline 
+5 & 8 & 6 & 7 \\ 
+\hline 
+9 & 4 & 2 & 1 \\ 
+\hline 
+\end{tabular} 
+\label{table: test}
+\end{table}
+
+
+\newpage
+
+\section*{Appendix B}
+\label{app: B}
+
+ITALIC
+
+\begin{figure}[H]
+	\caption{A cute kitten}
+	\includegraphics[scale=0.5]{kitten.jpg} 
+	\label{fig:gray1}
+\end{figure}
+
+\newpage
+
+\section*{Appendix C}
+\label{app: C}
+\setstretch{1.0}
+\begin{lstlisting}
+import numpy as np
+ 
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+ 
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+ 
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+ 
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+ 
+                VT = np.zeros((n*m,1), int)
+ 
+    return M
+\end{lstlisting}
+
+\end{document} 
