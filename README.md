@@ -1,2 +1,2 @@
 # tex-apa
-LaTeX class that mimics the official APA 2010 style.
+This is a LaTeX class that mimics the official APA 2010 style. Simply include the '''.cls''' file in your folder, and look at my '''apa_test.tex''' template to see how it works (it's easy, I promise!). For any issues with LaTeX google is a great resource, the only thing I have to add is that the '''\citeA''' command is added by the package that make the citations APA-style. The result is that the author is referenced automatically with the year(/and page) bracketed behind it.
