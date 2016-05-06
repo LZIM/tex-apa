@@ -4,7 +4,7 @@
 
 \RequirePackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
 \RequirePackage{graphicx}
-\RequirePackage{mathptmx}
+\RequirePackage{pslatex}
 \RequirePackage{fancyhdr}
 \RequirePackage{indentfirst}
 \RequirePackage{filecontents}
@@ -17,11 +17,13 @@
 \RequirePackage{setspace}
 \RequirePackage{titlesec}
 
+\addto{\captionsenglish}{\renewcommand{\abstractname}{\textnormal{Abstract}}}
+
 \titleformat{\subsection}[hang]{\bfseries\centering}{}{1em}{}
 
 \DeclareCaptionLabelSeparator{apasep}{\\}
-\captionsetup[figure]{labelfont=it, labelsep=apasep, singlelinecheck=false}
-\captionsetup[table]{labelfont=it, labelsep=apasep, singlelinecheck=false}
+\captionsetup[figure]{textfont=it, labelsep=apasep, singlelinecheck=false}
+\captionsetup[table]{textfont=it, labelsep=apasep, singlelinecheck=false}
 
 \newcommand{\resetHeadWidth}{\fancy@setoffs}
 \resetHeadWidth
@@ -29,7 +31,11 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyhf{}
 \fancyhead{\normalfont}
-\rhead{\normalfont \MakeUppercase{\@shorttitle} \thepage}
+\lhead{\ifnum\value{page}=1
+	Running head: 
+	\fi
+	\MakeUppercase{\@shorttitle}}
+\rhead{\normalfont \thepage}
 
 \newcommand{\headlinecolor}{\normalcolor}
 
@@ -41,7 +47,7 @@
 \newcommand{\course}[1]{
   \def\@course{#1}
 }
-\def\@instructor{}
+\def\@instructor{no instructor}
 \newcommand{\instructor}[1]{
   \def\@instructor{#1}
 }
@@ -49,32 +55,27 @@
 \newcommand{\additional}[1]{
   \def\@additional{#1}
 }
-\def\@wordcount{}
-\newcommand{\wordcount}[1]{
-  \def\@wordcount{#1}
-}
-\def\@shorttitle{no header title}
+\def\@shorttitle{no running head}
 \newcommand{\shorttitle}[1]{
   \def\@shorttitle{#1}
 }
 
 \renewcommand{\maketitle}{%
 	%\thispagestyle{empty}
-	\fontsize{12}{12}\fontfamily{mathptmx}%
-    \fontshape{sl}\selectfont\headlinecolor
+	\fontsize{12}{12}%
+    \selectfont\headlinecolor
     
 	\begin{center}
 	\topskip0pt
 	\vspace*{\fill}
     \@title\\
-    \vspace*{\fill}
     \@author\\
     \@course\\
     \@instructor\\
     \@university\\
     \@date\\
-    \@additional\\
-    \@wordcount\\
+	\vspace*{\fill}    
+    \@additional
     \end{center}
     \newpage
 }
@@ -89,8 +90,8 @@
 	\addtocounter{mysection}{1}
 	\@startsection
     {section}{1}{0pt}{-1.5ex plus -1ex minus -.2ex}%
-    {1ex plus .2ex}{\large\bfseries\slshape\headlinecolor\center}%
+    {1ex plus .2ex}{\headlinecolor\center}%
 }
  
-\renewcommand{\normalsize}{\fontsize{12}{12}\fontfamily{mathptmx}}
+\renewcommand{\normalsize}{\fontsize{12}{12}}
 \linespread{1.5}

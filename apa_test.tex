@@ -1,4 +1,4 @@
-\documentclass{stats_apa}
+\documentclass{stats_apa_style2}
 
 % Copy-paste bibtex format from Google scholar, eazy peazy!
 \begin{filecontents*}{MyReferences.bib}
@@ -18,8 +18,7 @@
 \course{Methods \& Statistics 210}
 \instructor{Instructor: Dr. Marcin Sklad}
 \university{University College Roosevelt}
-\additional{Dylan: Everything\break Not-Dylan: Nothing}
-\wordcount{Wordcount: 1,000}
+\additional{Dylan: Everything\break Not-Dylan: Nothing\break Wordcount: 1,000}
 \shorttitle{Study Fake Statistics}
 
 \begin{document}
@@ -42,8 +41,6 @@ In general, party identification is defined as “a long-term, affective, psycho
 
 \subsection*{Dataset} 
 
-MAKE BOLD
-
 \subsection*{Variable Selection}
 
 \section*{Results}
@@ -63,14 +60,12 @@ MAKE BOLD
 
 \begin{table}[H]
 \caption{A table}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{@{}*{4}{p{.25\textwidth}@{}}}
 \hline 
 A & B & C & D \\ 
 \hline 
 1 & 2 & 3 & 4 \\ 
-\hline 
 5 & 8 & 6 & 7 \\ 
-\hline 
 9 & 4 & 2 & 1 \\ 
 \hline 
 \end{tabular} 
