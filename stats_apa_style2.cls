@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{stats_apa}[2016/05/05 Class providing APA format for stats classes]
+\ProvidesClass{stats_apa_style2}[2016/05/05 Class providing APA format for stats classes]
 \LoadClass[12pt]{article}
 
 \RequirePackage{lipsum}
@@ -26,6 +26,7 @@
 \captionsetup[figure]{textfont=it, labelsep=apasep, singlelinecheck=false}
 \captionsetup[table]{textfont=it, labelsep=apasep, singlelinecheck=false}
 
+\setlength{\headheight}{18pt}
 \newcommand{\resetHeadWidth}{\fancy@setoffs}
 \resetHeadWidth
 \pagestyle{fancy}
@@ -33,9 +34,9 @@
 \fancyhf{}
 \fancyhead{\normalfont}
 \lhead{\ifnum\value{page}=1
-	Running head: 
-	\fi
-	\MakeUppercase{\@shorttitle}}
+  Running head: 
+  \fi
+  \MakeUppercase{\@shorttitle}}
 \rhead{\normalfont \thepage}
 
 \newcommand{\headlinecolor}{\normalcolor}
@@ -62,20 +63,20 @@
 }
 
 \renewcommand{\maketitle}{%
-	%\thispagestyle{empty}
-	\fontsize{12}{12}%
+  %\thispagestyle{empty}
+  \fontsize{12}{12}%
     \selectfont\headlinecolor
     
-	\begin{center}
-	\topskip0pt
-	\vspace*{\fill}
+  \begin{center}
+  \topskip0pt
+  \vspace*{\fill}
     \@title\\
     \@author\\
     \@course\\
     \@instructor\\
     \@university\\
     \@date\\
-	\vspace*{\fill}    
+  \vspace*{\fill}    
     \@additional
     \end{center}
     \newpage
@@ -83,13 +84,13 @@
  
 \newcounter{mysection}
 \renewcommand{\section}{%
-	\ifnum\value{mysection}=0
-	\begin{center}
-	\MakeUppercase{\@title}\\
-	\end{center}
-	\fi
-	\addtocounter{mysection}{1}
-	\@startsection
+  \ifnum\value{mysection}=0
+  \begin{center}
+  \MakeUppercase{\@title}\\
+  \end{center}
+  \fi
+  \addtocounter{mysection}{1}
+  \@startsection
     {section}{1}{0pt}{-1.5ex plus -1ex minus -.2ex}%
     {1ex plus .2ex}{\headlinecolor\center}%
 }

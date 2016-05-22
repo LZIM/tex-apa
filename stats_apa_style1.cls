@@ -26,6 +26,7 @@
 \captionsetup[figure]{textfont=it, labelsep=apasep, singlelinecheck=false}
 \captionsetup[table]{textfont=it, labelsep=apasep, singlelinecheck=false}
 
+\setlength{\headheight}{18pt}
 \newcommand{\resetHeadWidth}{\fancy@setoffs}
 \resetHeadWidth
 \pagestyle{fancy}
@@ -58,13 +59,13 @@
 }
 
 \renewcommand{\maketitle}{%
-	%\thispagestyle{empty}
-	\fontsize{12}{12}%
+  %\thispagestyle{empty}
+  \fontsize{12}{12}%
     \selectfont\headlinecolor
     
-	\begin{center}
-	\topskip0pt
-	\vspace*{\fill}
+  \begin{center}
+  \topskip0pt
+  \vspace*{\fill}
     \@title\\
     \vspace*{\fill}
     \@author\\
@@ -79,13 +80,13 @@
  
 \newcounter{mysection}
 \renewcommand{\section}{%
-	\ifnum\value{mysection}=0
-	\begin{center}
-	\MakeUppercase{\@title}\\
-	\end{center}
-	\fi
-	\addtocounter{mysection}{1}
-	\@startsection
+  \ifnum\value{mysection}=0
+  \begin{center}
+  \MakeUppercase{\@title}\\
+  \end{center}
+  \fi
+  \addtocounter{mysection}{1}
+  \@startsection
     {section}{1}{0pt}{-1.5ex plus -1ex minus -.2ex}%
     {1ex plus .2ex}{\headlinecolor\center}%
 }
